@@ -1,0 +1,695 @@
+{
+	"info": {
+		"_postman_id": "50469991-3d13-47a5-99a9-8592dc376512",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 24,\n    \"name\": \"Companhia\",\n    \"cnpj\": \"06.976.715/0001-60\",\n    \"zip_code\": \"45000-835\",\n    \"uf\": \"BA\",\n    \"address\": \"Av Central\",\n    \"complement\": \"Complemento\",\n    \"number\": 1,\n    \"city\": \"Vitória da Conquista\",\n    \"district\": \"Centro\",\n    \"country\": \"Brasil\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/company/store",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"company",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/company/getAll",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"company",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPaginate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"field\": [{\n        \"name\": \"cnpj\",\n        \"value\": \"06.976.715/0001-60\"\n    },{\n        \"name\": \"zip_code\",\n        \"value\": \"45000-835\"\n    }],\n    \"sort\": [\n        { \n            \"name\": \"name\", \n            \"value\": \"ASC\"\n        },\n        { \n            \"name\": \"zip_code\", \n            \"value\": \"ASC\"\n        }\n    ],\n    \"text\": \"Renato Souza\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/company/getAllPaginate",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"company",
+								"getAllPaginate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome editado\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/company/update/9",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"company",
+								"update",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/company/delete/12",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"company",
+								"delete",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/company/getById/9",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"company",
+								"getById",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PropertyOwners",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": 17,\n    \"name\": \"Proprietário Um\",\n    \"email\": \"renatosistemas.vc@gmail.com\",\n    \"phone\": \"(77) 988045503\",\n    \"cpf\": \"022.562.365-01\",\n    \"birth_date\": \"2000-01-01\",\n    \"marital_status\": \"Solteiro(a)\",\n    \"zip_code\": \"45000-835\",\n    \"uf\": \"BA\",\n    \"address\": \"Av Central\",\n    \"complement\": \"Complemento\",\n    \"number\": 1,\n    \"city\": \"Vitória da Conquista\",\n    \"district\": \"Centro\",\n    \"country\": \"Brasil\"    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property-owner/store",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property-owner",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property-owner/getAll",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property-owner",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPaginate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"field\": [{\n        \"name\": \"cpf\",\n        \"value\": \"022.562.365-01\"\n    },{\n        \"name\": \"zip_code\",\n        \"value\": \"45000-835\"\n    }],\n    \"sort\": [\n        { \n            \"name\": \"name\", \n            \"value\": \"ASC\"\n        },\n        { \n            \"name\": \"zip_code\", \n            \"value\": \"ASC\"\n        }\n    ],\n    \"text\": \"Imobiliária\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property-owner/getAllPaginate",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property-owner",
+								"getAllPaginate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome editado\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property-owner/update/10",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property-owner",
+								"update",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property-owner/delete/10",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property-owner",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property-owner/getById/11",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property-owner",
+								"getById",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"company_id\": 17,\n    \"name\": \"Imóvel Um\",\n    \"price_rent\": 1500.00,\n    \"price_sale\": 300000.00,\n    \"type\": \"Casa\",\n    \"zip_code\": \"45000-835\",\n    \"uf\": \"BA\",\n    \"address\": \"Av Central\",\n    \"complement\": \"Complemento\",\n    \"number\": 1,\n    \"city\": \"Vitória da Conquista\",\n    \"district\": \"Centro\",\n    \"country\": \"Brasil\",\n    \"properties_owners\": [ 13, 14 ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property/store",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property/getAll",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPaginate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"field\": [{\n        \"name\": \"type\",\n        \"value\": \"Casa\"\n    },{\n        \"name\": \"zip_code\",\n        \"value\": \"45000-835\"\n    }],\n    \"sort\": [\n        { \n            \"name\": \"type\", \n            \"value\": \"ASC\"\n        },\n        { \n            \"name\": \"zip_code\", \n            \"value\": \"ASC\"\n        }\n    ],\n    \"text\": \"Imóvel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property/getAllPaginate",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property",
+								"getAllPaginate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nome editado\",\n    \"properties_owners\": [ 13 ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property/update/11",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property",
+								"update",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property/delete/6",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/property/getById/7",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"property",
+								"getById",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Renato Souza\",\n    \"email\": \"renatosistemas.vc@gmail.com\",\n    \"password\": \"tim140\",\n    \"password_confirmation\": \"tim140\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/api/user/store",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"user",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"renatosistemas.vc@gmail.com\",\n    \"password\": \"tim140\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://www.desafio.com.br/oauth/token",
+							"protocol": "http",
+							"host": [
+								"www",
+								"desafio",
+								"com",
+								"br"
+							],
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
